@@ -7,7 +7,7 @@
 var feedback = function (res) {
   if (res.success === true) {
     var imgurURL = res.data.link.replace(/^http:\/\//i, 'https://');
-    localStorage.setItem('imgur image', imgurURL);
+    localStorage.setItem('actor image', imgurURL);
   }
 };
 
