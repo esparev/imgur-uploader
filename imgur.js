@@ -27,8 +27,18 @@ class Imgur {
     this.clientId = options.clientId;
     this.endpoint = 'https://api.imgur.com/3/image';
     this.callback = options.callback || undefined;
-    this.dropzone = document.getElementById('drop-zone');
-    this.run();
+
+    var oldTitle = document.title;
+
+    window.setInterval(function () {
+      if (document.title !== oldTitle) {
+        if (document.getElementById('drop-zone') !== null) {
+          this.dropzone = document.getElementById('drop-zone');
+          this.run();
+        }
+      }
+      oldTitle = document.title;
+    }, 100); //check every 100ms
   }
   /**
    * Posts the provided image to its respective API endpoint
