@@ -29,8 +29,8 @@ class Imgur {
     this.callback = options.callback || undefined;
 
     var oldTitle = document.title;
-
-    window.setInterval(function () {
+    
+    window.setInterval(() => {
       if (document.title !== oldTitle) {
         if (document.getElementById('drop-zone') !== null) {
           this.dropzone = document.getElementById('drop-zone');
